@@ -29,10 +29,14 @@ class CheckActive(APIView):
             queryset = Cmndr.objects.get(name_cmdr=user_name)
             if queryset.code_active == unique_number:
                 queryset.active = True
-                queryset.save()  # Save the changes to the database
+                queryset.save()
                 active_register = True
+            else:
+                queryset.active = False
+                queryset.save()
+                active_register = False
         except ObjectDoesNotExist:
-            pass  # Handle the case when Cmndr object does not exist
+            pass
 
         return Response(active_register)
 
