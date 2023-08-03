@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="801a5a33-3102-4b0f-b7ed-bed073b9ea82" name="ED API">
+        <fileTransfer accessType="SFTP" host="5.63.158.175" port="22" sshConfigId="e6daea67-c738-4253-85fa-24fa24d0b04a" sshConfig="root@5.63.158.175:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
