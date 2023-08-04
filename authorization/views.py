@@ -41,6 +41,18 @@ class CheckActive(APIView):
         return Response(active_register)
 
 
-# class CheckUpdate(APIView):
-#     pass
+class GetDescription(APIView):
+    def get(self, request):
+        queryset = Description.objects.get(status_update=True)
+        value = DescriptionSerializer(queryset, many=False)
+
+        return Response(value.data)
+
+
+class CheckUpdate(APIView):
+    def get(self, request):
+        queryset = GlobalActive.objects.get(check_stat=True)
+        value = GlobalActiveSerializer(queryset, many=False)
+
+        return Response(value.data)
 

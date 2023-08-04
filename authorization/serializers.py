@@ -19,12 +19,12 @@ class GlobalActiveSerializer(serializers.ModelSerializer):
         model = GlobalActive
         fields = [
             'id',
-            'global_active'
+            'global_active',
+            'check_stat',
         ]
 
 
 class CmndrSerializer(serializers.ModelSerializer):
-    description = DescriptionSerializer(required=False)
     global_activation = GlobalActiveSerializer(required=False)
 
     class Meta:
@@ -36,6 +36,5 @@ class CmndrSerializer(serializers.ModelSerializer):
             'monitor',
             'screen_size',
             'keyboard_layout',
-            'description',
             'global_activation',
         ]
