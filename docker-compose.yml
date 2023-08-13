@@ -7,7 +7,7 @@ services:
     volumes:
       - ./:/usr/src/app/
       - static_volume:/usr/src/app/static
-      - /home/WORK/BrixoDocFile/image/:/usr/src/app/model_onnx
+      - /home/WORK/BrixoDocFile/model_onnx/:/usr/src/app/model_onnx
     ports:
       - "8000:8000"
     env_file:
@@ -34,7 +34,7 @@ services:
     volumes:
       - ./nginx/cert:/etc/ssl/cert
       - static_volume:/usr/src/app/static
-      - /home/WORK/BrixoDocFile/image/:/usr/src/app/model_onnx
+      - /home/WORK/BrixoDocFile/model_onnx/:/usr/src/app/model_onnx
 volumes:
   postgres_data:
   static_volume:
