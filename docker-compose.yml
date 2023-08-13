@@ -33,6 +33,7 @@ services:
     volumes:
       - ./nginx/cert:/etc/ssl/cert
       - static_volume:/usr/src/app/static
+      - /home/WORK/BrixoDocFile/image/:/usr/src/app/model_onnx
 volumes:
   postgres_data:
   static_volume:

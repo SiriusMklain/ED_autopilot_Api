@@ -1,8 +1,14 @@
+import os
+
+from django.conf import settings
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.core.exceptions import ObjectDoesNotExist
 from .models import *
 from .serializers import *
+
+
+MEDIA_ROOT = settings.MEDIA_ROOT
 
 
 global active_register
@@ -56,3 +62,11 @@ class CheckUpdate(APIView):
 
         return Response(value.data)
 
+
+class GetModelOnnx(APIView):
+    def get(self, request):
+        dir_name_image = f'{MEDIA_ROOT}'
+        domen = request.META['HTTP_HOST']
+        files = os.listdir(dir_name_image)
+        onnx = f'{domen}/{files[0]}'
+        return Response(onnx)
