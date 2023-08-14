@@ -18,11 +18,18 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve
+from django.urls import re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('api/', include('authorization.urls')),
+
+    re_path(r'^robots.txt$', serve, {
+        'document_root': settings.BASE_DIR,
+        'path': 'robots.txt'
+    }),
 ]
 
 admin.site.site_header = 'ED Autopilot'
