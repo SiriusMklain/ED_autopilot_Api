@@ -21,6 +21,7 @@ COPY ./req.txt .
 
 RUN pip install -r req.txt
 RUN chown -R 101:101 /usr/src/app/model_onnx/
+RUN chown -R 101:101 /usr/src/app/robot.txt
 
 
 
