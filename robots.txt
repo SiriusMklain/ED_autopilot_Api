@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /model_onnx/
+Disallow: /admin/
