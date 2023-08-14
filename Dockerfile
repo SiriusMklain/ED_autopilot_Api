@@ -20,6 +20,8 @@ COPY ./req.txt .
 #RUN chmod +x entrypoint.sh
 
 RUN pip install -r req.txt
+RUN chown -R 101:101 /usr/src/app/model_onnx/
+
 
 
 
