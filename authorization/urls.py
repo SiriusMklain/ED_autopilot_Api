@@ -7,6 +7,5 @@ urlpatterns = (
     path('v1/get_comander/<int:id_commander>/', views.GetCmdr.as_view()),
     path('v1/check_active/', views.CheckActive.as_view()),
     path('v1/get_description/', views.GetDescription.as_view()),
-    path('v1/check_update/', views.CheckUpdate.as_view()),
-    path('v1/get_onnx/', views.GetModelOnnx.as_view()),
+    path('v1/check_update/', views.CheckUpdate.as_view())
 )

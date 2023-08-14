@@ -61,12 +61,3 @@ class CheckUpdate(APIView):
         value = GlobalActiveSerializer(queryset, many=False)
 
         return Response(value.data)
-
-
-class GetModelOnnx(APIView):
-    def get(self, request):
-        dir_name_image = f'{MEDIA_ROOT}'
-        domen = request.META['HTTP_HOST']
-        files = os.listdir(dir_name_image)
-        onnx = f'{domen}/{files[0]}'
-        return Response(onnx)
