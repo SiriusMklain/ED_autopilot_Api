@@ -5,7 +5,15 @@ class Description(models.Model):
     status_update = models.BooleanField(default=False)
     version_app = models.CharField(max_length=255, verbose_name="Версия приложения")
     short_text = models.CharField(max_length=255, verbose_name="Заголовок описания")
+    short_text_en = models.CharField(max_length=255, verbose_name="Заголовок описания EN", blank=True, null=True)
     text_app = models.TextField(verbose_name="Описание")
+    text_app_en = models.TextField(verbose_name="Описание EN", blank=True, null=True)
+
+    short_text_instruction = models.CharField(max_length=255, verbose_name="Заголовок описания инструкции", blank=True, null=True)
+    short_text_instruction_en = models.CharField(max_length=255, verbose_name="Заголовок описания инструкции EN", blank=True, null=True)
+
+    text_instruction = models.TextField(verbose_name="Описание Инструкции", blank=True, null=True)
+    text_instruction_en = models.TextField(verbose_name="Описание Инструкции EN", blank=True, null=True)
 
     def __str__(self):
         return self.short_text
