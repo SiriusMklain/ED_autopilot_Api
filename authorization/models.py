@@ -32,6 +32,7 @@ class Cmndr(models.Model):
     screen_size = models.CharField(max_length=255, verbose_name="Размеры экрана")
     keyboard_layout = models.TextField(verbose_name="Раскладка клавиатуры")
     global_activation = models.ForeignKey(GlobalActive, on_delete=models.CASCADE, blank=True, null=True)
+    telegram_id = models.BigIntegerField(verbose_name="telegram_id", blank=True, null=True)
 
     def __str__(self):
         return f'{self.name_cmdr} - {self.active}'
